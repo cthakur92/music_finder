@@ -7,6 +7,7 @@ import {ListGroupItem} from 'react-bootstrap';
 import {Image} from 'react-bootstrap';
 import {Media} from 'react-bootstrap';
 import '../../style/playlist.scss';
+import DetailsToggle from './details_toggle';
 import AppUtil from './util';
 
 
@@ -24,7 +25,7 @@ function Playlist({playlist}) {
               </Media.Left>
               <Media.Body>
                 <p><a href={track.permalink_url} target="_blank">{track.title}</a></p>
-                {(track.description)?<p  dangerouslySetInnerHTML={{__html: track.description}}></p>:""}
+                {(track.description)?<DetailsToggle text={track.description} />:""}
                 <p className="summary">
                   {(track.duration)?<span><small>Duration</small>: {util.getDuration(track.duration)}</span>:""}
                   {(track.created_at)?<span><small>Created At</small>: {(new Date(track.created_at)).toLocaleDateString()}</span>:""}
@@ -46,7 +47,8 @@ function Playlist({playlist}) {
         <ListGroup className="playlist">
           <ListGroupItem key={"playlist_title_"+playlist.id}>
             <Media.Heading><a href={playlist.permalink_url} target="_blank">{playlist.title}</a></Media.Heading>
-              {(playlist.description)?<p>{playlist.description}</p>:""}
+
+              {(playlist.description)?<DetailsToggle text={playlist.description} />:""}
               <p className="summary">
               {(playlist.duration)?<span><small>Duration</small>: {util.getDuration(playlist.duration)}</span>:""}
               {(playlist.track_count)?<span><small>Tracks</small>: {playlist.track_count}</span>:""}

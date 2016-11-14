@@ -8,7 +8,7 @@
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js './src/**/*.spec.js'"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chandan Thakur",
   "license": "ISC",
   "babel": {
     "presets": [

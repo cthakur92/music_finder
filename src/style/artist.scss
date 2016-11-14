@@ -31,3 +31,29 @@
     }
   }
 }
+.details-toggle{
+  .text-short{
+    display: inline;
+  }
+  .text-full{
+    display: none;
+  }
+  .text-toggle{
+    color: blue;
+    margin-left: 5px;
+    &:before{
+      content: "[+]";
+    }
+  }
+  &.full-text{
+    .text-short{
+      display: none;
+    }
+    .text-full{
+      display: inline;
+    }
+    .text-toggle:before{
+      content: "[-]";
+    }
+  }
+}
