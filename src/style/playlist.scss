@@ -1,0 +1,58 @@
+.playlist-container{
+  border-bottom: 1px solid silver;
+  margin-top: 20px;
+  .playlist{
+    margin-bottom: 10px;
+    &>.media-left{
+      text-align: center;
+      >img{
+        width: 150px;
+      }
+    }
+    .summary{
+      span{
+        margin-right: 20px;
+        padding-right: 20px;
+        border-right: .5px solid silver;
+        &:last-child{
+          border-right: none;
+        }
+        small{
+          color: silver;
+        }
+      }
+    }
+    li{
+      border: none;
+      border-top: 1px solid silver;
+      &:first-child{
+        border-top: none;
+      }
+    }
+  }
+  .media.track{
+    .media-left{
+      text-align: center;
+      >img{
+        height: 2em;
+        width: auto;
+      }
+    }
+  }
+}
+
+.view-toggle{
+  float: right;
+  position: relative;
+  top: 1em;
+  &.closed{
+    .less{
+      display: none;
+    }
+  }
+  &.open{
+    .more{
+      display: none;
+    }
+  }
+}
